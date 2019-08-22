@@ -1,33 +1,37 @@
-.App {
-  text-align: center;
+.form-parent{
+  background:#282c34;
+  color:white;
+  text-align:center;
+  width:40%;
+  margin:2% auto;
+  border-radius:10px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.form-parent h1{
+  margin:0;
+  text-align:left;
+  padding:2% 4%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.form-input input{
+  width: 80%;
+  padding:2% 0%;
+  margin:2% 0%;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-checkbox{
+  margin:2% 0%
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form-button{
+  padding-bottom:2%;
+}
+.form-button button{
+  color:#282c34;
+  background:white;
+  border: 1px solid #282c34;
+  cursor:pointer;
+  padding:1% 4%;
 }
