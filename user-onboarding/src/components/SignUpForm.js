@@ -11,36 +11,35 @@ const SignUpForm = ({ errors, touched, status }) => {
         }
     }, [status])
     return (
-        <div>
+        <div className="form-parent">
+            <h1>Login</h1>
+            <hr />
             <Form>
-                <div>
-                    <label htmlFor="name">Name: </label>
-                    <Field type="text" name="name" placeholder="Name" />
+                <div className="form-input">
                     {touched.name && errors.name && (
                         <p>{errors.name}</p>
                     )}
+                    <Field type="text" name="name" placeholder="Name" />
                 </div>
-                <div>
-                    <label htmlFor="email">Email: </label>
-                    <Field type="email" name="email" placeholder="Email" />
+                <div className="form-input">
                     {touched.email && errors.email && (
                         <p>{errors.email}</p>
                     )}
+                    <Field type="email" name="email" placeholder="Email" />
                 </div>
-                <div>
-                    <label htmlFor="password">Password: </label>
-                    <Field type="password" name="password" placeholder="Password" />
+                <div className="form-input">
                     {touched.password && errors.password && (
                         <p>{errors.password}</p>
                     )}
+                    <Field type="password" name="password" placeholder="Password" />
                 </div>
-                <div>
+                <div className="form-checkbox">
                     <label>
                         <Field type="checkbox" name="tos" />
                         Agree to Terms of Service
-                </label>
+                    </label>
                 </div>
-                <div>
+                <div className="form-button">
                     <button type="submit">Submit</button>
                 </div>
             </Form>
