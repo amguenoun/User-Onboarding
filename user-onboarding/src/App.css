@@ -1,6 +1,6 @@
 .form-parent{
   background:#282c34;
-  color:#FFFFF2;
+  color:#FEE0C6;
   text-align:center;
   width:40%;
   margin:2% auto;
@@ -19,7 +19,7 @@
   padding:2% 0%;
   margin:2% 0%;
   border-radius: 10px;
-  background:#f0ead6;
+  background:#FEE0C6;
 }
 
 .form-checkbox{
@@ -31,7 +31,7 @@
 }
 .form-button button{
   color:#282c34;
-  background:#FFFFF2;
+  background:#FEE0C6;
   border: 1px solid #282c34;
   cursor:pointer;
   padding:1% 4%;
@@ -57,6 +57,6 @@
 
 .card-item{
   background:#282c34;
-  color:#FFFFF2;
+  color:#FEE0C6;
   padding:2%;
 }
