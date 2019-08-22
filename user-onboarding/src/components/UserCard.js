@@ -8,6 +8,7 @@ const UserCard = (props) => (
             <hr />
             <p><Icon name='key' />: {props.user.password}</p>
             <p><Icon name='mail' />: {props.user.email}</p>
+            <p><Icon name="briefcase" />: {props.user.role} </p>
         </div>
     </Card>
 )

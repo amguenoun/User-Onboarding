@@ -36,6 +36,14 @@ const SignUpForm = ({ errors, touched, status }) => {
                         )}
                         <Field type="password" name="password" placeholder="Password" />
                     </div>
+                    <div className="role-select">
+                        <Field component='select' name='role' >
+                            <option>Please Choose a Role</option>
+                            <option value="Frontend">Frontend Engineer</option>
+                            <option value="Backend">Backend Engineer</option>
+                            <option value="Fullstack">Fullstack Engineer</option>
+                        </Field>
+                    </div>
                     <div className="form-checkbox">
                         {touched.tos && errors.tos && (
                             <p>{errors.tos}</p>
