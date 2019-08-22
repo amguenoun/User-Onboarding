@@ -14,18 +14,21 @@ const SignUpForm = ({ errors, touched, status }) => {
         <div>
             <Form>
                 <div>
+                    <label htmlFor="name">Name: </label>
                     <Field type="text" name="name" placeholder="Name" />
                     {touched.name && errors.name && (
                         <p>{errors.name}</p>
                     )}
                 </div>
                 <div>
+                    <label htmlFor="email">Email: </label>
                     <Field type="email" name="email" placeholder="Email" />
                     {touched.email && errors.email && (
                         <p>{errors.email}</p>
                     )}
                 </div>
                 <div>
+                    <label htmlFor="password">Password: </label>
                     <Field type="password" name="password" placeholder="Password" />
                     {touched.password && errors.password && (
                         <p>{errors.password}</p>
