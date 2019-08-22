@@ -3,7 +3,7 @@ import { Form, Field, withFormik } from "formik"
 import * as Yup from "yup";
 import axios from 'axios'
 
-const SignUpForm = ({ errors, touched, values }) => {
+const SignUpForm = ({ errors, touched }) => {
     return (
         <Form>
             <div>
@@ -52,6 +52,12 @@ const FormikSignUpForm = withFormik({
         email: Yup.string().email("Email is not valid").required("Email Required"),
         password: Yup.string().min(6, "Password must be 6 characters or longer").required("Password Required")
     }),
+
+    handleSubmit(values) {
+        axios.post("https://reqres.in/api/users", values)
+            .then(response => console.log(response.data))
+            .catch(error => console.log(error))
+    }
 })(SignUpForm);
 
 export default FormikSignUpForm;
