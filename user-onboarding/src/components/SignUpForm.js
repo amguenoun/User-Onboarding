@@ -1,18 +1,38 @@
 import React from 'react'
 import { Form, Field, withFormik } from "formik"
 import * as Yup from "yup";
+import axios from 'axios'
 
-const SignUpForm = () => {
+const SignUpForm = ({ errors, touched, values }) => {
     return (
         <Form>
-            <Field type="text" name="name" placeholder="Name" />
-            <Field type="email" name="email" placeholder="Email" />
-            <Field type="password" name="password" placeholder="Password" />
-            <label>
-                <Field type="checkbox" name="tos" />
-                Agree to Terms of Service
+            <div>
+                <Field type="text" name="name" placeholder="Name" />
+                {touched.name && errors.name && (
+                    <p>{errors.name}</p>
+                )}
+            </div>
+            <div>
+                <Field type="email" name="email" placeholder="Email" />
+                {touched.email && errors.email && (
+                    <p>{errors.email}</p>
+                )}
+            </div>
+            <div>
+                <Field type="password" name="password" placeholder="Password" />
+                {touched.password && errors.password && (
+                    <p>{errors.password}</p>
+                )}
+            </div>
+            <div>
+                <label>
+                    <Field type="checkbox" name="tos" />
+                    Agree to Terms of Service
                 </label>
-            <button type="submit">Submit</button>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
         </Form>
     )
 }
