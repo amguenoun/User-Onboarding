@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Field, withFormik } from "formik"
+import * as Yup from "yup";
 
 const SignUpForm = () => {
     return (
@@ -25,6 +26,12 @@ const FormikSignUpForm = withFormik({
             tos: tos || false
         }
     },
+
+    validationSchema: Yup.object().shape({
+        name: Yup.string().required("Name Required"),
+        email: Yup.string().email("Email is not valid").required("Email Required"),
+        password: Yup.string().min(6, "Password must be 6 characters or longer").required("Password Required")
+    }),
 })(SignUpForm);
 
 export default FormikSignUpForm;
