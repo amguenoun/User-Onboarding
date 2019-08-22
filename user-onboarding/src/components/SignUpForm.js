@@ -37,6 +37,9 @@ const SignUpForm = ({ errors, touched, status }) => {
                         <Field type="password" name="password" placeholder="Password" />
                     </div>
                     <div className="role-select">
+                        {touched.role && errors.role && (
+                            <p>{errors.role}</p>
+                        )}
                         <Field component='select' name='role' >
                             <option>Please Choose a Role</option>
                             <option value="Frontend">Frontend Engineer</option>
@@ -71,12 +74,13 @@ const SignUpForm = ({ errors, touched, status }) => {
 }
 
 const FormikSignUpForm = withFormik({
-    mapPropsToValues({ name, email, password, tos }) {
+    mapPropsToValues({ name, email, password, tos, role }) {
         return {
             name: name || "",
             email: email || "",
             password: password || "",
-            tos: tos || false
+            tos: tos || false,
+            role: role || ""
         }
     },
 
@@ -84,7 +88,8 @@ const FormikSignUpForm = withFormik({
         name: Yup.string().required("Name Required"),
         email: Yup.string().email("Email is not valid").required("Email Required"),
         password: Yup.string().min(6, "Password must be 6 characters or longer").required("Password Required"),
-        tos: Yup.bool().test('tos', 'Acceptance of Terms of Service Required', value => value === true).required('Acceptance Required')
+        tos: Yup.bool().test('tos', 'Acceptance of Terms of Service Required', value => value === true).required('Acceptance Required'),
+        role: Yup.string().required('Please Select a Role')
     }),
 
     handleSubmit(values, { setStatus }) {
