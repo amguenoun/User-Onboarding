@@ -1,6 +1,6 @@
 .form-parent{
   background:#282c34;
-  color:white;
+  color:#FFFFF2;
   text-align:center;
   width:40%;
   margin:2% auto;
@@ -19,6 +19,7 @@
   padding:2% 0%;
   margin:2% 0%;
   border-radius: 10px;
+  background:#f0ead6;
 }
 
 .form-checkbox{
@@ -30,8 +31,32 @@
 }
 .form-button button{
   color:#282c34;
-  background:white;
+  background:#FFFFF2;
   border: 1px solid #282c34;
   cursor:pointer;
   padding:1% 4%;
+}
+
+.card-list{
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  width:80%;
+  justify-content:space-around
+}
+
+
+.ui.card{
+  background:#282c34;
+  min-width:150px;
+  min-height:150px;
+  margin: 1% !important;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+  border-radius:10px;
+}
+
+.card-item{
+  background:#282c34;
+  color:#FFFFF2;
+  padding:2%;
 }

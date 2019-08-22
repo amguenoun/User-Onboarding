@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Field, withFormik } from "formik"
 import * as Yup from "yup";
-import axios from 'axios'
+import axios from 'axios';
+
+import UserCard from "./UserCard";
 
 const SignUpForm = ({ errors, touched, status }) => {
     const [users, setUsers] = useState([]);
@@ -48,15 +50,14 @@ const SignUpForm = ({ errors, touched, status }) => {
                     </div>
                 </Form>
             </div>
-            {users.map(user => {
-                return (
-                    <>
-                        <p>Name: {user.name}</p>
-                        <p>Email: {user.email}</p>
-                        <p>Password: {user.password}</p>
-                    </>
-                )
-            })}
+            <div className="card-list">
+                {users.map(user => {
+                    return (
+                        <UserCard user={user} />
+                    )
+                })}
+            </div>
+
         </>
     )
 }
